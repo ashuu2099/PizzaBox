@@ -1,0 +1,34 @@
+@use '../../assets/global-styles/variables.scss' as *;
+
+.orange-button {
+  background: var(--clr-accent);
+  border: none;
+  border-radius: 35px;
+  color: var(--clr-neutral-white);
+  cursor: pointer;
+  display: block;
+  font-size: clamp( .75rem, 2.5vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-block: 2rem .5rem;
+  padding: 1.25rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.orange-button:focus {
+  /* Provide a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px solid var(--clr-accent);
+}
+
+.orange-button:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+     that do not support :focus-visible */
+  outline: none;
+}
+
+.orange-button:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 1px solid var(--clr-accent);
+}

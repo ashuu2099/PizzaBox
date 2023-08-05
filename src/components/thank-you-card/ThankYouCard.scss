@@ -1,0 +1,62 @@
+@use '../../assets/global-styles/variables.scss' as *;
+
+
+.thank-you-card {
+  background: var(--modal-bg);
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 0 10000px hsla(0, 0%, 0%, 0.8);
+  max-width: 24rem;
+  padding: clamp(1.5rem,2vw,2rem);
+  letter-spacing: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1500;
+  
+  img {
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.final-rating {
+  background: hsla(216, 12%, 54%, .15);
+  max-width:fit-content;
+  margin: 0 auto;
+  padding: .35rem 1rem;
+  border-radius: 35px;
+  color: var(--clr-accent);
+  font-size: .9rem;
+}
+
+.thank-you-title {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.thank-you-text {
+  color: var(--clr-neutral-grey-300);
+  padding-block: 1rem;
+}
+
+.home-link {
+  color: var(--clr-accent);
+
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+.home-link:focus {
+  outline: 3px dashed var(--clr-accent);
+}
+
+.home-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.home-link:focus-visible {
+  outline: 3px dashed var(--clr-accent);
+}

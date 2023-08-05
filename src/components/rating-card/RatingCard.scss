@@ -1,0 +1,120 @@
+@use '../../assets/global-styles/variables.scss' as *;
+
+.rating-card {
+  background: var(--modal-bg);
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 0 10000px hsla(0, 0%, 0%, 0.8);
+  max-width: 24rem;
+  padding: clamp(1.5rem,2vw,2rem);
+  letter-spacing: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1500;
+}
+
+.rating-card__img {
+  background: hsla(216, 12%, 54%, .2);
+  border-radius: 50%;
+  padding: .75rem;
+}
+
+// RATING CARD TEXTS
+
+.rating-card__title {
+  color: var(--text-clr);
+  font-size: 1.5rem;
+  margin-block: 1rem .75rem;
+}
+
+.rating-card__description {
+  color: var(--clr-neutral-grey-200);
+  font-size: .9rem;
+  margin-bottom: 2rem;
+}
+
+/* // RATING CARD FORM */
+
+.rating-card__form {
+
+  .input-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  label {
+    color: var(--clr-neutral-grey-200);
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: white;
+
+      &::after {
+        background: var(--clr-neutral-grey-200);
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: var(--clr-neutral-grey-300);
+      cursor: pointer;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      opacity: .2;
+    }
+  }
+
+  input:checked + label {
+    color: white;
+  }
+
+  input:checked + label::after {
+    background: var(--clr-accent);
+    opacity: 1;
+  }
+
+  .rating-card-btn {
+    background: var(--clr-accent);
+    border: none;
+    border-radius: 35px;
+    color: var(--clr-neutral-white);
+    cursor: pointer;
+    display: block;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-block: 2rem .5rem;
+    width: 100%;
+    padding: 1rem 7rem;
+    text-transform: uppercase;
+    text-align: center;
+    transform: scale(1);
+    transition: all .25s ease-in;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.focus-box:focus-within {
+  outline: 3px dashed var(--clr-accent);
+}

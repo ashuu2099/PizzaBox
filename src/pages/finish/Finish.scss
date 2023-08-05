@@ -1,0 +1,75 @@
+@use '../../assets/global-styles/variables.scss' as *;
+
+.finish {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10rem;
+}
+
+.finish-title {
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  font-weight: 800;
+  padding-bottom: 2rem;
+}
+
+.order-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  padding-bottom: .5rem;
+  font-style: italic;
+}
+
+.feedback-text {
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.arrow {
+  width: clamp(70px, 6vw, 100px);
+  height: auto;
+}
+
+.arrow-right {
+  transform: rotateY(180deg);
+}
+
+.feedback-modal-btn {
+  all: unset;
+  color: var(--clr-accent);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-clr);
+  }
+}
+
+.feedback-modal-btn:focus {
+  /* Provide a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dashed var(--clr-accent);
+}
+
+.feedback-modal-btn:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+     that do s  upport :focus-visible */
+  outline: none;
+}
+
+.feedback-modal-btn:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dashed var(--clr-accent);
+}
+
+.pizza-img-holder {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  height: 120px;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

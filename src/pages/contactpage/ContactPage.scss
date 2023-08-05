@@ -1,0 +1,131 @@
+@use '../../assets/global-styles/variables.scss' as *;
+
+.contact-page {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 9.3rem;
+  text-align: center;
+  @media(min-width: 38rem) {
+    text-align: left;
+    max-width: 34rem;
+  }
+}
+
+.contact-page__title {
+  margin-bottom: 1rem;
+}
+
+.contact-page__description {
+  margin-bottom: 1.5rem;
+}
+
+//MODAL
+
+.modal {
+  background: var(--modal-bg);
+  width: 90%;
+  border-radius: 15px;
+  color: var(--clr-neutral-blue-900);
+  padding: 2rem;
+  max-width: 24rem;
+  padding: clamp(1.5rem,2vw,2rem);
+  letter-spacing: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  border: 2px dashed var(--clr-accent);
+
+  h2 {
+    color: var(--text-clr);
+    font-size: 1.5rem;
+    margin-block: 1rem .75rem;
+  }
+}
+
+.contact-text {
+  color: var(--clr-neutral-grey-200);
+  font-size: .9rem;
+}
+
+.redirect-message {
+  color: var(--clr-neutral-grey-200);
+  font-style: italic;
+  padding-top: 2.75rem;
+  font-size: .9rem;
+}
+
+//FOOTER
+
+footer {
+  background: var(--clr-accent);
+  color: var(--clr-neutral-white);
+  margin-top: 5rem;
+}
+
+.footer-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  max-width: 86rem;
+  margin: 0 auto;
+  gap: 1.5rem;
+  padding-block: 2.5rem 2rem;
+  @media(min-width: 60rem) {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @media(min-width: 60rem) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.contact-info-container h3 {
+  padding-block-end: 1rem;
+  text-transform: uppercase;
+}
+
+.social-media {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-media img {
+  width: 25px;
+  transform: scale(1);
+  transition: all .2s ease-in;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.social-media-link:focus {
+  outline: 3px dashed red;
+}
+
+.social-media-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.social-media-link:focus-visible {
+  outline: 3px dashed red;
+}
+
+.contact-form-btn {
+  @media(min-width: 40rem) {
+    margin: 0;
+  }
+}
